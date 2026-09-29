@@ -1,0 +1,26 @@
+{
+  "beschreibung": "Knowledge-Identifier, die check-catalog.mjs nicht als 'wird nirgends gesetzt' melden soll. 'praefixe' und 'identifier': Wissen, das nicht im Katalog oder in config/ entsteht, sondern von AUDIS selbst, vom Einsatzleitsystem (Startparameter, URL) oder von Analyzern kommt. 'platzhalter': absichtlich nie gesetztes Wissen (Dummy-Trigger, Feature-Schalter). Bei neuen Quellen hier ergänzen – immer mit Begründung.",
+  "praefixe": [
+    { "id": "#audis.initial.", "quelle": "Startparameter des Einsatzleitsystems" },
+    { "id": "#audis.location.", "quelle": "AUDIS (Standort-Visualisierung)" },
+    { "id": "#audis.notification.", "quelle": "AUDIS (Standort-Nachricht)" },
+    { "id": "#audis.weather.", "quelle": "Analyzer weather" },
+    { "id": "#srz.data.", "quelle": "Analyzer (z. B. railway, motorway)" }
+  ],
+  "identifier": [
+    { "id": "#audis.intermediate-disposition", "quelle": "AUDIS (Zwischendisposition)" },
+    { "id": "#audis.interrogation.resume", "quelle": "AUDIS (fortgesetzte Abfrage)" },
+    { "id": "#audis.userId", "quelle": "AUDIS / Einsatzleitsystem" },
+    { "id": "#audis.patient.age.years", "quelle": "AUDIS / Einsatzleitsystem" },
+    { "id": "#audis.patient.age.months", "quelle": "AUDIS / Einsatzleitsystem" },
+    { "id": "#audis.casnummer", "quelle": "Analyzer hazardous-material" },
+    { "id": "#srz.unwetter.ktzh", "quelle": "Analyzer storm-mode (Unwettermodus Kanton aktiv)" },
+    { "id": "#srz.unwetter.stzh", "quelle": "Analyzer storm-mode (Unwettermodus Stadt aktiv)" },
+    { "id": "#srz.unwetter.aktiv", "quelle": "Analyzer storm-mode (irgendwo Unwettermodus aktiv)" }
+  ],
+  "platzhalter": [
+    { "id": "#inkludebugfix", "grund": "Dummy-Trigger der Templates (#inkludebugfix = Version18): verhindert, dass deren Szenarien global aktiv sind" },
+    { "id": "#Template", "grund": "Dummy-Trigger in 99-Template-Bahn" },
+    { "id": "#amokneu", "grund": "Feature-Schalter für die vorbereitete neue Amok-Abfrage (derzeit deaktiviert)" }
+  ]
+}

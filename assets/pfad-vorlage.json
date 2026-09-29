@@ -1,0 +1,45 @@
+{
+  // Vorlage für scripts/simulate.mjs und scripts/ui-test.mjs.
+  // Ablage im Katalog-Repo als usersnaps/<nr>/snap-<nr>.json (neben den Screenshots).
+  "name": "Snap #NNNN: Kurzbeschreibung",
+
+  // URL-Parameter der Snap-URL, z. B. ?p=esserzett!
+  "start": { "p": "esserzett!" },
+
+  // Optional: Start aus einem Knowledge Stash (Custom Data des Snaps oder Debug-Widget), Datei relativ zu dieser
+  // "stash": "stash-NNNN.json",
+
+  // Frage (Identifier oder Textausschnitt) → Antwort:
+  // Text, Wert, "Unbekannt", Liste (Mehrfachauswahl), Alter (Jahre oder Altersgruppe) oder { "wissen": { … } }
+  // Atemanalyse: Frequenz als Zahl oder { "atemfrequenz": 9, "cpr": true, "stoppuhr": 10 } (stoppuhr nur UI-Test)
+  // Anleitung: "Durchgeführt, erfolgreich" (kurz "Durchgeführt"), "Durchgeführt, ohne Erfolg", "Nicht durchgeführt"
+  // Beschriftetes Eingabefeld: "Label: Freitext", z. B. "Ja: Endometriose"; Zahlenfeld: "40.0"
+  // Alter lieber in Jahren (45): mit reiner Altersgruppe fragen manche Kataloge das Alter nach
+  "antworten": {
+    "#was": "Einstiegsstichwort",
+    "#alter": 45,
+    "#geschlecht": "weiblich",
+    "#atmung": "Ja, normale Atmung",
+    "#reaktion": "normale Reaktion"
+  },
+
+  // Nur UI-Test: Screenshots beim ersten Anzeigen dieser Fragen (das Ende wird immer fotografiert)
+  "screenshots": [],
+
+  // Nur UI-Test: nach dem Pfad über die Timeline zu diesen Fragen zurückspringen
+  "zurueck": [],
+
+  // Nur UI-Test: bevor "vor" beantwortet wird, über die Timeline zu "frage" zurück und neu antworten
+  // "umantworten": [{ "vor": "#reaktion", "frage": "#atemnot", "antwort": "Leichte Atembeschwerden" }],
+
+  // Erwartungen an den Stand "nachher"; nicht benötigte Felder weglassen.
+  "erwartet": {
+    "nichtGefragt": [],
+    "gefragt": [],
+    "dispo": "RD-C"
+    // "vorausgewaehlt": { "#frage": [] },          nur UI-Test: beim ersten Anzeigen markierte Antworten
+    // "nachZurueck": { "#frage": ["Antwort"] },     nur UI-Test: Auswahl nach dem Zurückspringen
+    // "cprKnopf": { "#atemfrequenz.messung": false },          Atemanalyse: CPR-Knopf angeboten?
+    // "cprKnopfStoppuhr": { "#atemfrequenz.messung": true }    nur UI-Test: CPR-Knopf nach der Stoppuhr
+  }
+}
